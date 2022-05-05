@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
+    'spikkl_url' => env('SPIKKL_URL'),
+    'spikkl_key' => env('SPIKKL_KEY'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -211,5 +214,4 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
-
 ];

@@ -14,8 +14,10 @@ use \App\Http\Controllers\UserController;
 |
 */
 
-Route::redirect('/','/user/signup');
+Route::redirect('/','user.list');
 
-Route::group(['controller' => UserController::class, 'name' => 'user', 'prefix' => 'user'], function () {
-    Route::get('/signup', 'index')->name('signup');
+Route::group(['controller' => UserController::class, 'prefix' => 'user', 'as' => 'user.'], function () {
+    Route::get('list',['as' => 'list', 'uses' =>'index']);
+    Route::post('store',['as' => 'store', 'uses' =>'store']);
+    Route::get('signup',['as' => 'create', 'uses' =>'create']);
 });
